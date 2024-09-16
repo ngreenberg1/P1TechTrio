@@ -1,30 +1,19 @@
-
-import java.time.chrono.ThaiBuddhistChronology;
-
 public class Rover {
     /** x-coordinate for map */
-    private int x;
-
-    /** y-coordinate for map */
-    private int y;
+    private ILocation l;
 
     /** cardinal directions in the form of N, E, S, or W */    
     private Direction d; 
 
     /** Basic constructor */
-    public Rover(int x, int y, String d) {
-        this.x = x;
-        this.y = y;
-        setD(d); 
+    public Rover(ILocation l, String d) {
+        this.l = l;
+        setD(d);
     }
 
     /* Accessors & Mutators */
-    public int getX() {
-        return this.x;
-    }
-
-    public int getY() {
-        return this.y;
+    public ILocation getLocation() {
+        return this.l;
     }
 
     public Direction getD() {
@@ -39,9 +28,34 @@ public class Rover {
         }      
     }
 
-    
+    /*
+     For parsing movement string "LMRMLMMM" 
+     Note: unsure if we should move to a different class
+     */
+    public void move(char command) {
+            if (command == 'L') d.turnLeft();
+            if (command == 'R') d.turnRight();
+            if (command == 'M') moveM();
+    }
+
+    /* 
+    If facing this direction, move this way: 
+        N (x, y+1) 
+        E (x + 1, y)
+        S (x, y -1)
+        W (x-1, y)
+    */
+    public void moveM() {
+        if(l.getY() - 1 < 0 || l.getY() - 1 < 0 /* TO DO: Add plateau max sizes from class */) {
+            if("N".equals(getD())) l.setY(l.getY() + 1);
+            if("E".equals(getD())) l.setX(l.getX() + 1);
+            if("S".equals(getD())) l.setY(l.getY() - 1);
+            if("W".equals(getD())) l.setX(l.getX() - 1);
+        }
+    }
+
     public String toString() {
-        return "(" + this.x + " " + this.y + this.d + ")";
+        return "(" + this.l + " " + this.d + ")";
     }
 
 } // class Rover
