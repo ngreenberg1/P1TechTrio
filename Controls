@@ -1,4 +1,4 @@
-public class Controls implements IControls {
+public class Controls {
 
     /** move directions represented by a string */
     private String s;
@@ -17,9 +17,9 @@ public class Controls implements IControls {
         String[] input = s.split("");
 
         for (String s1 : input) {
-            if(!(s1.contains("L") 
-            || s1.contains("M") 
-            || s.contains("R"))) {
+            if(!(s1.equals("L") 
+            || s1.equals("M") 
+            || s1.equals("R"))) {
                 throw new IllegalArgumentException(s + " not valid input");
             } 
         }

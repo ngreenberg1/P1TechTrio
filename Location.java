@@ -1,4 +1,4 @@
-public class Location {
+public class Location implements ILocation{
     /** x-coordinate for map */
     private int x;
 

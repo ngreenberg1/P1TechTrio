@@ -32,6 +32,7 @@ public class Rover {
      For parsing movement string "LMRMLMMM" 
      Note: unsure if we should move to a different class
      */
+    //we could move this to control class and then use main for prompting and enforcing valid input 
     public void move(char command) {
             if (command == 'L') d.turnLeft();
             if (command == 'R') d.turnRight();
