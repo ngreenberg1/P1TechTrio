@@ -1,4 +1,4 @@
-public class Location implements ILocation {
+public class Location {
     /** x-coordinate for map */
     private int x;
 
@@ -18,6 +18,16 @@ public class Location implements ILocation {
 
     public int getY() {
         return this.y;
+    }
+
+    public void setX(int x) {
+        // TO DO: integrate limits of plateau (either wrap around using mod or throw an exception)
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        // TO DO: integrate limits of plateau (either wrap around using mod or throw an exception)
+        this.y = y;
     }
 
     public String toString() {
