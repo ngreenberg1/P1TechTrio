@@ -1,7 +1,7 @@
 
 import java.time.chrono.ThaiBuddhistChronology;
 
-public class Rover implements IRover {
+public class Rover {
     /** x-coordinate for map */
     private int x;
 
@@ -9,13 +9,13 @@ public class Rover implements IRover {
     private int y;
 
     /** cardinal directions in the form of N, E, S, or W */    
-    private char d; 
+    private Direction d; 
 
     /** Basic constructor */
     public Rover(int x, int y, String d) {
         this.x = x;
         this.y = y;
-        this.d = setD(d); 
+        setD(d); 
     }
 
     /* Accessors & Mutators */
@@ -27,15 +27,19 @@ public class Rover implements IRover {
         return this.y;
     }
 
-    public String getD() {
+    public Direction getD() {
         return this.d;
     }
 
-    public void setD(d) {
-        if(// this direction is not North, South, West, East) { throws Exception }
-        this.d = d;
+    public void setD(String d) {
+        try {
+            this.d = Direction.valueOf(d); //convert string to Direction enum 
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid direction: " + d + ". Use 'N', 'E', 'S',or 'W'");
+        }      
     }
 
+    
     public String toString() {
         return "(" + this.x + " " + this.y + this.d + ")";
     }

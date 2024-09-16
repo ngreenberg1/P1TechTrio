@@ -1,27 +1,23 @@
-public class Direction implements IDirection {
-    /** x-coordinate for map */
-    private int x;
+public enum Direction {
+    N, E, S, W; 
 
-    /** y-coordinate for map */
-    private int y;
-
-    /** Basic constructor */
-    public Location(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Direction turnLeft() {
+        switch(this) {
+            case N: return W;
+            case W: return S;
+            case S: return E;
+            case E: return N;
+        }
+        throw new IllegalStateException("Invalid Direction");
     }
 
-    /* Accessors & Mutators */
-    public int getX() {
-        return this.x;
+    public Direction turnRight() {
+        switch(this) {
+            case N: return E;
+            case W: return N;
+            case S: return W;
+            case E: return S;
+        }
+        throw new IllegalStateException("Invalid Direction");
     }
-
-    public int getY() {
-        return this.y;
-    }
-
-    public String toString() {
-        return "(" + this.x + " " + this.y + ")";
-    }
-
-} // class Location
+}

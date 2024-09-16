@@ -1,5 +1,5 @@
 
-public class Plateau implements IPlateau {
+public class Plateau {
     /** x-coordinate for map */
     private int dimX;
 
@@ -8,9 +8,17 @@ public class Plateau implements IPlateau {
 
 
     /** Basic constructor */
-    public Plateau(int dimX, dimY) {
+    public Plateau(int dimX, int dimY) {
         this.dimX = dimX;
         this.dimY = dimY;
+    }
+
+    public int getDimX() {
+        return dimX;
+    }
+
+    public int getDimY() {
+        return dimY;
     }
 
 
