@@ -1,8 +1,8 @@
 **Architecture Decision Records**
 
-Title:
+Title: Implement logic for Plateau & Rover
 
-Context:
+Context: We need to ensure that there are no restrictions to amount or movement of the rover. 
 
 Decision:
 
