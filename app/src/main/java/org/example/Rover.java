@@ -41,10 +41,10 @@ public class Rover {
     public void move(char command) {
         switch (command) {
             case 'L':
-                d.turnLeft();
+                d = d.turnLeft();
                 break;
             case 'R':
-                d.turnRight();
+                d = d.turnRight();
                 break;
             case 'M':
                 moveM();
@@ -95,7 +95,7 @@ public class Rover {
 
     @Override
     public String toString() {
-        return "(" + this.l + " " + this.d + ")";
+        return  this.l + " " + this.d;
     }
 
 
