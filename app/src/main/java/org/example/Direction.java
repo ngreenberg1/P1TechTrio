@@ -1,3 +1,5 @@
+package org.example;
+
 public enum Direction {
     N, E, S, W; 
 
@@ -8,7 +10,7 @@ public enum Direction {
             case S: return E;
             case E: return N;
         }
-        throw new IllegalStateException("Invalid Direction");
+        throw new IllegalStateException("Invalid org.example.Direction");
     }
 
     public Direction turnRight() {
@@ -18,6 +20,6 @@ public enum Direction {
             case S: return W;
             case E: return S;
         }
-        throw new IllegalStateException("Invalid Direction");
+        throw new IllegalStateException("Invalid org.example.Direction");
     }
 }

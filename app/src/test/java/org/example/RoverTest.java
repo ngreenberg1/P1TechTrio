@@ -1,3 +1,5 @@
+package org.example;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +16,7 @@ public class RoverTest {
 
 
     
-    //add more Rover-specific tests here like RoverMovesForward, RoverRotatesLeft, RoverRotatesRight,
+    //add more org.example.Rover-specific tests here like RoverMovesForward, RoverRotatesLeft, RoverRotatesRight,
    
     @Test 
     public void testSetDirectionValid() {

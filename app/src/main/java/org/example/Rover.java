@@ -1,3 +1,5 @@
+package org.example;
+
 public class Rover {
     /** x-coordinate for map */
     private Location l;
@@ -22,7 +24,7 @@ public class Rover {
 
     public void setD(String d) {
         try {
-            this.d = Direction.valueOf(d); //convert string to Direction enum 
+            this.d = Direction.valueOf(d); //convert string to org.example.Direction enum
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid direction: " + d + ". Use 'N', 'E', 'S',or 'W'");
         }      
@@ -59,4 +61,4 @@ public class Rover {
         return "(" + this.l + " " + this.d + ")";
     }
 
-} // class Rover
+} // class org.example.Rover

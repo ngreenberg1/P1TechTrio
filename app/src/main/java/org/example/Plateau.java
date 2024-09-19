@@ -1,3 +1,4 @@
+package org.example;
 
 public class Plateau {
     /** x-coordinate for map */
@@ -24,4 +25,4 @@ public class Plateau {
 
     //Not sure if/what we need to add to this
 
-} // class Plateau
+} // class org.example.Plateau

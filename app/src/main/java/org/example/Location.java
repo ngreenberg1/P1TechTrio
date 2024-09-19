@@ -1,3 +1,5 @@
+package org.example;
+
 public class Location {
     /** x-coordinate for map */
     private int x;
@@ -34,4 +36,4 @@ public class Location {
         return "(" + this.x + " " + this.y + ")";
     }
 
-} // class Location
+} // class org.example.Location
