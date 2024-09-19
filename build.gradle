@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit Jupiter API for writing tests
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+
+    // JUnit Jupiter Engine for running tests
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
