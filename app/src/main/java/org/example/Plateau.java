@@ -11,7 +11,7 @@ public class Plateau {
     /** Basic constructor */
     public Plateau(int dimX, int dimY) {
         //check first that rover dimensions are positive integers
-        if (dimX < 0 || dimY < 0) {
+        if (dimX <= 0 || dimY <= 0) {
             throw new IllegalArgumentException("Dimensions must be positive.");
         }
         this.dimX = dimX;

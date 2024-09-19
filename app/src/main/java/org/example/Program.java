@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
+//TODO
+//need to improve the program logic so that valid and correctly formatted input is enforced,
+//and user is prompted for new input in the case of invalid input, rather than the program exiting
+
 public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        //TODO
+        //enforce valid input so that testInvalidPlateauDimension test passes
         //Get plateau dimensions
         System.out.println("Enter plateau dimensions (format: X Y): ");
         int dimX = scanner.nextInt();
