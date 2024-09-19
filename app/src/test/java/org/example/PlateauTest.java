@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PlateauTest {
 
@@ -8,7 +9,7 @@ public class PlateauTest {
     public void testPlateauInitialization() {
         Plateau plateau = new Plateau(5,5);
 
-        assertEquals(5, plateau.getWidth());
-        assertEquals(5, plateau.getHeight());
+        assertEquals(5, plateau.getDimX());
+        assertEquals(5, plateau.getDimY());
     }
 }

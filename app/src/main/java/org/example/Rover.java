@@ -7,10 +7,14 @@ public class Rover {
     /** cardinal directions in the form of N, E, S, or W */    
     private Direction d; 
 
+    //plateau that the rover will be moving on
+    private Plateau plateau;
+
     /** Basic constructor */
-    public Rover(Location l, String d) {
+    public Rover(Location l, String d, Plateau plateau) {
         this.l = l;
         setD(d);
+        this.plateau = plateau;
     }
 
     /* Accessors & Mutators */
@@ -22,23 +26,32 @@ public class Rover {
         return this.d;
     }
 
+    // maybe
     public void setD(String d) {
-        try {
-            this.d = Direction.valueOf(d); //convert string to org.example.Direction enum
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Invalid direction: " + d + ". Use 'N', 'E', 'S',or 'W'");
-        }      
+        this.d = Direction.valueOf(d); //convert string to Direction enum
     }
+
 
     /*
      For parsing movement string "LMRMLMMM" 
      Note: unsure if we should move to a different class
      */
-    //we could move this to control class and then use main for prompting and enforcing valid input 
+    //we could move this to control class and then use main for prompting and enforcing valid input
+    //Rather than throw an exception we could re-prompt like in the isWithinBounds method
     public void move(char command) {
-            if (command == 'L') d.turnLeft();
-            if (command == 'R') d.turnRight();
-            if (command == 'M') moveM();
+        switch (command) {
+            case 'L':
+                d.turnLeft();
+                break;
+            case 'R':
+                d.turnRight();
+                break;
+            case 'M':
+                moveM();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid command: " + command + ". Use 'L', 'R', or 'M'");
+        }
     }
 
     /* 
@@ -48,17 +61,43 @@ public class Rover {
         S (x, y -1)
         W (x-1, y)
     */
+    /* Move the rover one step forward based on its direction */
     public void moveM() {
-        if(l.getY() - 1 < 0 || l.getY() - 1 < 0 /* TO DO: Add plateau max sizes from class */) {
-            if("N".equals(getD())) l.setY(l.getY() + 1);
-            if("E".equals(getD())) l.setX(l.getX() + 1);
-            if("S".equals(getD())) l.setY(l.getY() - 1);
-            if("W".equals(getD())) l.setX(l.getX() - 1);
+        int newX = l.getX();
+        int newY = l.getY();
+
+        switch (d) {
+            case N:
+                newY += 1;
+                break;
+            case E:
+                newX += 1;
+                break;
+            case S:
+                newY -= 1;
+                break;
+            case W:
+                newX -= 1;
+                break;
         }
+
+        // Check if the new position is within the plateau's bounds
+        if (plateau.isWithinBounds(newX, newY)) {
+            l.setX(newX);
+            l.setY(newY);
+        } else {
+            System.out.println("Move out of bounds! Please try again.");
+        }
+
     }
 
+
+
+    @Override
     public String toString() {
         return "(" + this.l + " " + this.d + ")";
     }
+
+
 
 } // class org.example.Rover

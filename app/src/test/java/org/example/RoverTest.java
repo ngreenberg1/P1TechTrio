@@ -7,8 +7,9 @@ public class RoverTest {
 
     @Test 
     public void testRoverInitialization() {
+        Plateau plateau = new Plateau(5, 5);
         Location location = new Location(1, 2);
-        Rover rover = new Rover(location, "N");
+        Rover rover = new Rover(location, "N", plateau);
 
         assertEquals(1, 2, rover.getL());
         assertEquals("N", rover.getD());

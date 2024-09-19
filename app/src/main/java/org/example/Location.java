@@ -32,8 +32,10 @@ public class Location {
         this.y = y;
     }
 
+
     public String toString() {
         return "(" + this.x + " " + this.y + ")";
     }
+
 
 } // class org.example.Location
