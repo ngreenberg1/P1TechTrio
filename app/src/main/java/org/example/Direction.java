@@ -3,6 +3,8 @@ package org.example;
 public enum Direction {
     N, E, S, W; 
 
+    //TODO
+    //fix the exception handling here so that rover tests pass
     public Direction turnLeft() {
         switch(this) {
             case N: return W;
@@ -10,9 +12,11 @@ public enum Direction {
             case S: return E;
             case E: return N;
         }
-        throw new IllegalStateException("Invalid org.example.Direction");
+        throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
     }
 
+    //TODO
+    //fix the exception handling here so that rover tests pass
     public Direction turnRight() {
         switch(this) {
             case N: return E;
@@ -20,6 +24,6 @@ public enum Direction {
             case S: return W;
             case E: return S;
         }
-        throw new IllegalStateException("Invalid org.example.Direction");
+        throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
     }
 }

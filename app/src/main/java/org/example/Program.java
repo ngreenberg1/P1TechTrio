@@ -12,8 +12,7 @@ public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        //TODO
-        //enforce valid input so that testInvalidPlateauDimension test passes
+
         //Get plateau dimensions
         System.out.println("Enter plateau dimensions (format: X Y): ");
         int dimX = scanner.nextInt();
@@ -47,7 +46,7 @@ public class Program {
             rovers.add(rover);
         }
 
-        // Step 3: Process commands for each rover
+        // Process commands for each rover
         for (int i = 0; i < rovers.size(); i++) {
             Rover rover = rovers.get(i);
             System.out.println("Enter movement commands for rover " + (i+1) + " at position " + rover + " (format: LMR): ");
@@ -58,7 +57,7 @@ public class Program {
                 rover.move(command);
             }
 
-            // Step 4: Display final position for each rover
+            // Display final position for each rover
             System.out.println("Final position of rover " + (i+1) + ": " + rover);
         }
 
