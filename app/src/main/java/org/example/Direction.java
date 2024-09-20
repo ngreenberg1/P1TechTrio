@@ -11,8 +11,9 @@ public enum Direction {
             case W: return S;
             case S: return E;
             case E: return N;
+            default: throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
+
         }
-        throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
     }
 
     //TODO
@@ -23,7 +24,8 @@ public enum Direction {
             case W: return N;
             case S: return W;
             case E: return S;
+            default: throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
+
         }
-        throw new IllegalStateException("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.");
     }
 }
