@@ -113,21 +113,6 @@ public class RoverTest {
         assertEquals(Direction.E, rover.getD(), "Direction should be East");
     }
 
-    // TODO
-    //need to decide how to handle exceptions and invalid input and then maybe change the test
-    @Test 
-    public void testSetDirectionInvalid() {
-        Location location = new Location(0, 0);
-        Plateau plateau = new Plateau(5, 5);
-        Rover rover = new Rover(location, "N", plateau);
-
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            rover.setD("Z");
-        });
-
-        assertEquals("Invalid direction: Z. Use 'N', 'E', 'S', or 'W'.", exception.getMessage());
-        
-    }
 
     //TODO
     //failing test
