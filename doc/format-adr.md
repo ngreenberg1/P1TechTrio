@@ -1,12 +1,12 @@
-**Architecture Decision Records**
+## **Architecture Decision Records**
 
-Title: Implement logic for org.example.Plateau & org.example.Rover
+> Title: Implement logic for org.example.Plateau & org.example.Rover
 
-Context: We need to ensure that there are no restrictions to amount or movement of the rovers. 
+> Context: We need to ensure that there are no restrictions to amount or movement of the rovers. 
 
-Decision:
+> Decision:
 
-Status:
+>Status:
 
 Consequences: 
 
