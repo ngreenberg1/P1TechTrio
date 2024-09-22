@@ -7,5 +7,5 @@
 >
 > **Consequences(Cons):** Increased complexity. Initial set up will be longer for a smaller project like this.
 >
-> **Status:** proposed, accepted, superseded
+> **Status:** Accepted
 
