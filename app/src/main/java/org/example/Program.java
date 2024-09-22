@@ -59,8 +59,9 @@ public class Program {
 
         sc.close();
 
-        System.out.println("\n Final Rover positions:");
-        simulator.printRovers();
+        // Alternative display option (print)
+        // System.out.println("\n Final Rover positions:");
+        // simulator.moveAndPrintRovers();
 
         System.out.println("\nCommand line grid representations: ");
         simulator.moveAndDisplyRovers();

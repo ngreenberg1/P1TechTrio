@@ -26,6 +26,9 @@ public class Simulator {
             Rover rover = rovers.get(i);
             String commands = commandsList.get(i);
 
+            // show intial pos then loop through the commands
+            display.showGrid(plateau, rover);
+
             for (char command : commands.toCharArray()) {
                 rover.move(command);
                 display.showGrid(plateau, rover);
@@ -34,9 +37,17 @@ public class Simulator {
     }
 
     // Standard string representation of rover's position 
-    public void printRovers() {
-        for (Rover r : rovers) {
-            System.out.println(r.toString());
+    public void moveAndPrintRovers() {
+        for (int i = 0; i < rovers.size(); i++) {
+            Rover rover = rovers.get(i);
+            String commands = commandsList.get(i);
+
+            for (char command : commands.toCharArray()) {
+                rover.move(command);
+            }
+
+            System.out.println(rovers.get(i).toString());
+        
         }
     }
 }
