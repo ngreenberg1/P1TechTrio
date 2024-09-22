@@ -25,7 +25,7 @@ public class Simulator {
         for (int i = 0; i < rovers.size(); i++) {
             Rover rover = rovers.get(i);
             String commands = commandsList.get(i);
-
+            System.out.println("Rover " + i);
             // show intial pos then loop through the commands
             display.showGrid(plateau, rover);
 
@@ -33,6 +33,8 @@ public class Simulator {
                 rover.move(command);
                 display.showGrid(plateau, rover);
             }
+
+            System.out.println();
         }
     }
 

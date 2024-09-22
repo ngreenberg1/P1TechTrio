@@ -94,9 +94,6 @@ public class RoverTest {
         assertEquals(5, rover.getL().getY(), "Y coordinate should be 5");
     }
 
-    //TODO
-    //can someone check the logic here? I'm having a hard time deciding what
-    //the final coordinates of the rover should be.  need to make sure that 2,2 is correct
     @Test
     public void testRoverCommands() {
         Plateau plateau = new Plateau(5, 5);
@@ -113,9 +110,6 @@ public class RoverTest {
     }
 
 
-    //TODO
-    //failing test
-    //not the biggest problem if this is failing but shouldn't be too hard to fix
     @Test
     public void testToString() {
         Location location = new Location(1, 2);
