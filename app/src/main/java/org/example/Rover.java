@@ -26,18 +26,13 @@ public class Rover {
         return this.d;
     }
 
-    // maybe
     public void setD(String d) {
         this.d = Direction.valueOf(d); //convert string to Direction enum
     }
 
-
     /*
-     For parsing movement string "LMRMLMMM" 
-     Note: unsure if we should move to a different class
+     For parsing movement string 
      */
-    //we could move this to control class and then use main for prompting and enforcing valid input
-    //Rather than throw an exception we could re-prompt like in the isWithinBounds method
     public void move(char command) {
         switch (command) {
             case 'L':
@@ -91,13 +86,8 @@ public class Rover {
 
     }
 
-
-
-    @Override
     public String toString() {
         return  this.l + " " + this.d;
     }
-
-
 
 } // class org.example.Rover

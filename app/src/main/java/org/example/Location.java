@@ -23,12 +23,10 @@ public class Location {
     }
 
     public void setX(int x) {
-        // TO DO: integrate limits of plateau (either wrap around using mod or throw an exception)
         this.x = x;
     }
 
     public void setY(int y) {
-        // TO DO: integrate limits of plateau (either wrap around using mod or throw an exception)
         this.y = y;
     }
 

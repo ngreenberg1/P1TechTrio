@@ -26,12 +26,10 @@ public class Plateau {
         return dimY;
     }
 
-    //does it make sense to move this to a different class?
     public boolean isWithinBounds(int x, int y) {
         return x >= 0 && x <= dimX && y >= 0 && y <= dimY;
     }
 
-    //Not sure if/what we need to add to this
     //to string method in case we want to output this after plateau initialization
     @Override
     public String toString() {
