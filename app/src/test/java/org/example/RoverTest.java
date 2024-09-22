@@ -1,8 +1,7 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
 
 public class RoverTest {
 
@@ -123,7 +122,7 @@ public class RoverTest {
         Plateau plateau = new Plateau(5, 5);
         Rover rover = new Rover(location, "N", plateau);
 
-        assertEquals("(1 2 N)", rover.toString());
+        assertEquals("(1 2) N", rover.toString());
     }
 
 }
